@@ -1,74 +1,54 @@
 {% load static %}
-<section class="home-slider owl-carousel">
-      <div class="slider-item">
-      	<div class="overlay"></div>
-        <div class="container d-md-block d-none">
-          <div class="row d-md-flex slider-text align-items-center justify-content-end" data-scrollax-parent="true">
-	          <div class="col-md-7 d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-	          	<div class="text pb-4 pt-5">
-		            <h1 class="mb-4">Taylor Plan, Orchard House</h1>
-		            <div class="desc">
-			            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
-		            </div>
-	            </div>
-	          </div>
-        	</div>
-        </div>
-        <div class="img" style="background-image:url(images/bg_2.jpg);">
-        	<div class="container">
-        		<div class="row d-flex justify-content-start">
-        			<div class="col-md-6 col-lg-4">
-        				<div class="details p-5">
-	        				<span class="cat d-block mb-4">House</span>
-			        		<h3 class="mb-3">Taylor Plan, Orchard House</h3>
-									<p class="loc"><span class="icon-my_location mr-2"></span> Melbourne, Vic 3004, NC USA</p>
-									<ul class="mb-4">
-										<li><span>Area:</span> <span>250sqft</span></li>
-										<li><span>Bedroom</span> <span>3</span></li>
-										<li><span>Bathroom:</span> <span>3</span></li>
-										<li><span>Garage:</span> <span>1</span></li>
-									</ul>
-									<p><a href="#" class="btn btn-black btn-outline-black py-3">View Properties</a></p>
-								</div>
-        			</div>
-        		</div>
-        	</div>
-        </div>
-      </div>
+<!--== SlideshowBg Area Start ==-->
+    <section id="slideslow-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="slideshowcontent">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <h1>BOOK A CAR TODAY!</h1>
+                                <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
 
-      <div class="slider-item">
-      	<div class="overlay"></div>
-        <div class="container d-md-block d-none">
-          <div class="row d-md-flex slider-text align-items-center justify-content-end" data-scrollax-parent="true">
-	          <div class="col-md-7 d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-	          	<div class="text pb-4 pt-5">
-		            <h1 class="mb-4">Rose Villa, USA</h1>
-		            <div class="desc">
-			            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
-		            </div>
-	            </div>
-	          </div>
-        	</div>
+                                <div class="book-ur-car">
+                                    <form action="index2.html">
+                                        <div class="pick-location bookinput-item">
+                                            <select class="custom-select">
+                                              <option selected>Pick Location</option>
+                                              <option value="1">Dhaka</option>
+                                              <option value="2">Comilla</option>
+                                              <option value="3">Barishal</option>
+                                              <option value="3">Rangpur</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="pick-date bookinput-item">
+                                            <input id="startDate2" placeholder="Pick Date" />
+                                        </div>
+
+                                        <div class="retern-date bookinput-item">
+                                            <input id="endDate2" placeholder="Return Date" />
+                                        </div>
+
+                                        <div class="car-choose bookinput-item">
+                                            <select class="custom-select">
+                                              <option selected>Choose Car</option>
+                                              <option value="1">BMW</option>
+                                              <option value="2">Audi</option>
+                                              <option value="3">Lexus</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="bookcar-btn bookinput-item">
+                                            <button type="submit">Book Car</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="img" style="background-image:url(images/bg_1.jpg);">
-        	<div class="container">
-        		<div class="row d-flex justify-content-start">
-        			<div class="col-md-6 col-lg-4">
-        				<div class="details p-5">
-	        				<span class="cat d-block mb-4">House</span>
-			        		<h3 class="mb-3">Rose Villa, USA</h3>
-									<p class="loc"><span class="icon-my_location mr-2"></span> Melbourne, Vic 3004, NC USA</p>
-									<ul class="mb-4">
-										<li><span>Area:</span> <span>250sqft</span></li>
-										<li><span>Bedroom</span> <span>3</span></li>
-										<li><span>Bathroom:</span> <span>3</span></li>
-										<li><span>Garage:</span> <span>1</span></li>
-									</ul>
-									<p><a href="#" class="btn btn-black btn-outline-black py-3">View Properties</a></p>
-								</div>
-        			</div>
-        		</div>
-        	</div>
-        </div>
-      </div>
     </section>
+    <!--== SlideshowBg Area End ==-->
