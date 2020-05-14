@@ -1,97 +1,106 @@
-   {% load static %}
-    <!--== Preloader Area Start ==-->
-    <div class="preloader">
-        <div class="preloader-spinner">
-            <div class="loader-content">
-                <img src="{%static 'assets/img/preloader.gif'%}" alt="JSOFT">
+{% load static %}
+<!--== Preloader Area Start ==-->
+<div class="preloader">
+    <div class="preloader-spinner">
+        <div class="loader-content">
+            <img src="{% static 'assets/img/preloader.gif' %}" alt="JSOFT">
+        </div>
+    </div>
+</div>
+<!--== Preloader Area End ==-->
+
+<!--== Header Area Start ==-->
+<header id="header-area" class="fixed-top">
+    <!--== Header Top Start ==-->
+    <div id="header-top" class="d-none d-xl-block">
+        <div class="container">
+            <div class="row">
+                <!--== Single HeaderTop Start ==-->
+                <div class="col-lg-3 text-left">
+                    <i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
+                </div>
+                <!--== Single HeaderTop End ==-->
+
+                <!--== Single HeaderTop Start ==-->
+                <div class="col-lg-3 text-center">
+                    <i class="fa fa-mobile"></i> +1 800 345 678
+                </div>
+                <!--== Single HeaderTop End ==-->
+
+                <!--== Single HeaderTop Start ==-->
+                <div class="col-lg-3 text-center">
+                    <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                </div>
+                <!--== Single HeaderTop End ==-->
+
+                <!--== Social Icons Start ==-->
+                <div class="col-lg-3 text-right">
+                    <div class="header-social-icons">
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <!--== Social Icons End ==-->
             </div>
         </div>
     </div>
-    <!--== Preloader Area End ==-->
+    <!--== Header Top End ==-->
 
-    <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top">
-        <!--== Header Top Start ==-->
-        <div id="header-top" class="d-none d-xl-block">
-            <div class="container">
-                <div class="row">
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-left">
-                        <i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
-                    </div>
-                    <!--== Single HeaderTop End ==-->
-
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-center">
-                        <i class="fa fa-mobile"></i> +1 800 345 678
-                    </div>
-                    <!--== Single HeaderTop End ==-->
-
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-center">
-                        <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
-                    </div>
-                    <!--== Single HeaderTop End ==-->
-
-                    <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <!--== Social Icons End ==-->
+    <!--== Header Bottom Start ==-->
+    <div id="header-bottom">
+        <div class="container">
+            <div class="row">
+                <!--== Logo Start ==-->
+                <div class="col-lg-4">
+                    <a href="index2.html" class="logo">
+                        <img src="{% static 'assets/img/logo.png' %}" alt="JSOFT">
+                    </a>
                 </div>
+                <!--== Logo End ==-->
+
+                <!--== Main Menu Start ==-->
+                <div class="col-lg-8 d-none d-xl-block">
+                    <nav class="mainmenu alignright">
+                        <ul>
+                            <li class="active"><a href="/">Anasayfa</a>
+
+                            </li>
+
+                            <li><a href="index.html">Kategori</a>
+                                <ul>
+                                    {% load mptt_tags %}
+
+                                    {% recursetree category %}
+                                        <li ><a href="/category/{{ node.slug }}"><b>{{ node.title }}</b></a>
+
+                                            {% if not node.is_leaf_node %}
+                                                    <li><a href="package.html"><i>{{ node.title }}</i><i class="fa fa-caret-down"></i>{{ children }}</a></li>
+
+                                            {% endif %}
+
+                                        </li>
+                                    {% endrecursetree %}
+
+
+
+
+                                </ul>
+                            </li>
+                           <li><a href="/aboutus">Hakkımızda</a></li>
+
+                            <li><a href="#">Cars</a>
+                            </li>
+                            <li><a href="/references">Referanslar</a></li>
+                            <li><a href="/contact">İletişim</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--== Main Menu End ==-->
             </div>
         </div>
-        <!--== Header Top End ==-->
-
-        <!--== Header Bottom Start ==-->
-        <div id="header-bottom">
-            <div class="container">
-                <div class="row">
-                    <!--== Logo Start ==-->
-                    <div class="col-lg-4">
-                        <a href="index2.html" class="logo">
-                            <img src="{%static 'assets/img/logo.png'%}" alt="JSOFT">
-                        </a>
-                    </div>
-                    <!--== Logo End ==-->
-
-                    <!--== Main Menu Start ==-->
-                    <div class="col-lg-8 d-none d-xl-block">
-                        <nav class="mainmenu alignright">
-                            <ul>
-                                <li class="active"><a href="/">Anasayfa</a>
-
-                                </li>
-                                <li><a href="/aboutus">Hakkımızda</a></li>
-                                <li><a href="services.html">services</a></li>
-                                <li><a href="#">Cars</a>
-                                </li>
-                                <li><a href="index.html">Pages</a>
-                                    <ul>
-                                        <li><a href="package.html">Pricing</a></li>
-                                        <li><a href="driver.html">Driver</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="help-desk.html">Help Desk</a></li>
-                                        <li><a href="login.html">Log In</a></li>
-                                        <li><a href="register.html">Register</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="/references">Referanslar</a></li>
-                                <li><a href="/contact">İletişim</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!--== Main Menu End ==-->
-                </div>
-            </div>
-        </div>
-        <!--== Header Bottom End ==-->
-    </header>
-    <!--== Header Area End ==-->
+    </div>
+    <!--== Header Bottom End ==-->
+</header>
+<!--== Header Area End ==-->

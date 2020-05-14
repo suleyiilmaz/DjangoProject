@@ -2,17 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f1f42a0-a641-47d1-8fb5-8d015c7d0800" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/templates/aboutus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/references.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/migrations/0007_product_slug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/migrations/0008_auto_20200513_1234.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/migrations/0009_auto_20200514_1242.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/audia6_3crAdOU.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/bmwx6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/bmwx6_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/bmwx6_2_IkJQC3e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/bmwx6_2_NIyCQOB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/bmwx6_2_OwYlgxb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/bmwx6_FDSvUKi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/bmwx6_uIfxkWU.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/indir.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/indir_1_dgSrral.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/indir_T0IffIl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/motorsiklet_4ul3HSv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/rolls royce.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/rolls royce2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/rolls_royce.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/rolls_royce2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/rolls_royce2_Yz5nX95.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +146,7 @@
       <workItem from="1588733513420" duration="25261000" />
       <workItem from="1589126199828" duration="9505000" />
       <workItem from="1589177495817" duration="4795000" />
-      <workItem from="1589182315491" duration="6130000" />
+      <workItem from="1589182315491" duration="27065000" />
     </task>
     <servers />
   </component>

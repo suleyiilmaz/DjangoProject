@@ -1,1 +1,53 @@
 {% load static %}
+<section id="car-list-area" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 m-auto">
+                <div class="car-details-content">
+                    {% for rs in sliderdata %}
+
+                        <div class="car-preview-crousel">
+                            <div class="single-car-preview">
+                                <img src="{{ rs.image.url }}" alt="JSOFT">
+                            </div>
+                            <div class="single-car-preview">
+                                <img src="{% static 'assets/img/car/car-1.jpg' %}" alt="JSOFT">
+                            </div>
+                            <div class="single-car-preview">
+                                <img src="{% static 'assets/img/car/car-6.jpg' %}" alt="JSOFT">
+                            </div>
+
+                        </div>
+                        <div class="car-list-info without-bar">
+                            <h2><a href="#">{{ rs.title }}</a></h2>
+                            <h5>{{ rs.price }}$ / günlük</h5>
+                            <p>{{ rs.description }}</p>
+                            <ul class="car-info-list">
+                                <li>AC</li>
+                                <li>Diesel</li>
+                                <li>Auto</li>
+                            </ul>
+                            <p class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star unmark"></i>
+                            </p>
+                            <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="rent-btn">Hemen Kirala</a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Car List Content End -->
+
+    <!-- Sidebar Area Start -->
+
+    <!-- Sidebar Area End -->
+    </div>
+    </div>
+</section>
+<!--== Car List Area End ==-->
