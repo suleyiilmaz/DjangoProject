@@ -73,10 +73,10 @@
                                     {% load mptt_tags %}
 
                                     {% recursetree category %}
-                                        <li ><a href="/category/{{ node.slug }}"><b>{{ node.title }}</b></a>
+                                        <li ><a href="/category/{{ node.id }}/{{ node.slug }}"><b>{{ node.title }}</b></a>
 
                                             {% if not node.is_leaf_node %}
-                                                    <li><a href="package.html"><i>{{ node.title }}</i><i class="fa fa-caret-down"></i>{{ children }}</a></li>
+                                                    <li><a href="#"><i>{{ node.title }}</i><i class="fa fa-caret-down"></i>{{ children }}</a></li>
 
                                             {% endif %}
 
@@ -90,7 +90,7 @@
                             </li>
                            <li><a href="/aboutus">Hakkımızda</a></li>
 
-                            <li><a href="#">Cars</a>
+                            <li><a href="/products">Cars</a>
                             </li>
                             <li><a href="/references">Referanslar</a></li>
                             <li><a href="/contact">İletişim</a></li>

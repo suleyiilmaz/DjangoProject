@@ -1,0 +1,100 @@
+{% extends "homebase.html" %}
+{% block title %}{{category_data.company}} Products{% endblock %}
+{% block keywords %}{{category_data.keywords}}{% endblock %}
+{% block description %} {{category_data.description}}{% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block slider %}
+     <section id="page-title-area" class="section-padding overlay">
+        <div class="container" style="height: 100px">
+            <div class="row">
+                <!-- Page Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>CHOOSE YOUR CAR</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                    </div>
+                </div>
+                <!-- Page Title End -->
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block content %}
+
+    <section id="about-area" class="section-padding">
+        <div class="container">
+
+            <div class="row">
+                <!-- Choose Area Content Start -->
+                <div class="col-lg-12">
+                    <div class="choose-ur-cars">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <!-- Choose Filtering Menu Start -->
+                                <div class="home2-car-filter">
+                                    <a href="#" data-filter="*" class="active">all</a>
+                                    <a href="#" data-filter=".con">Conver</a>
+                                    <a href="#" data-filter=".hat">Truck</a>
+                                    <a href="#" data-filter=".mpv">MPV</a>
+                                    <a href="#" data-filter=".sedan">Sedan</a>
+                                    <a href="#" data-filter=".suv">SUV</a>
+                                </div>
+                                <!-- Choose Filtering Menu End -->
+                            </div>
+
+                            <div class="col-lg-9">
+                                {% for rs in products %}
+                                <!-- Choose Cars Content-wrap -->
+                                <div class="row popular-car-gird">
+
+                                    <!-- Single Popular Car Start -->
+                                    <div class="col-lg-6 col-md-6 con suv mpv">
+                                        <div class="single-popular-car">
+                                            <div class="p-car-thumbnails">
+                                                <a class="car-hover" href="assets/img/car/car-1.jpg">
+                                                    <img src="{{rs.image.url}}" alt="JSOFT">
+                                                </a>
+                                            </div>
+
+                                            <div class="p-car-content">
+                                                <h3>
+                                                    <a href="/product/{{ rs.id }}/{{ rs.slug }}">{{rs.title}}</a>
+                                                    <span class="price"><i class="fa fa-tag"></i> {{rs.price}}/günlük</span>
+                                                </h3>
+
+                                               <h5><a href="/product/{{ rs.id }}/{{ rs.slug }}">Hemen Kirala</a></h5>
+
+                                                <div class="p-car-feature">
+                                                    <a href="#">{{rs.amount}} adet kaldı</a>
+                                                    <a href="#">manual</a>
+                                                    <a href="#">AIR CONDITION</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Popular Car End -->
+
+{% endfor %}
+
+
+
+                                </div>
+                                <!-- Choose Cars Content-wrap -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Choose Area Content End -->
+            </div>
+
+
+        </div>
+    </section>
+
+{% endblock %}
