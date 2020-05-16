@@ -1,20 +1,20 @@
 {% extends "homebase.html" %}
-{% block title %}{{product.title}}{% endblock %}
-{% block keywords %}{{product.keywords}}{% endblock %}
-{% block description %} {{product.description}}{% endblock %}
+{% block title %}{{ product.title }}{% endblock %}
+{% block keywords %}{{ product.keywords }}{% endblock %}
+{% block description %} {{ product.description }}{% endblock %}
 
 {% block head %}
-    <link rel="shortcut icon" type="image/x-icon" href="{{ setting.icon.url}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ setting.icon.url }}"/>
 {% endblock %}
 
 {% block slider %}
-     <section id="page-title-area" class="section-padding overlay">
+    <section id="page-title-area" class="section-padding overlay">
         <div class="container" style="height: 10px">
             <div class="row">
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2 >Arabanıza göz atın</h2>
+                        <h2>Arabanıza göz atın</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                     </div>
                 </div>
@@ -27,30 +27,31 @@
 
 {% block content %}
 
-      <!--== Car List Area Start ==-->
+    <!--== Car List Area Start ==-->
     <section id="car-list-area" class="section-padding">
         <div class="container">
             <div class="row">
                 <!-- Car List Content Start -->
                 <div class="col-lg-8">
                     <div class="car-details-content">
-                        <h2>{{product.title}} <span class="price">Rent: <b>${{product.price}}</b></span></h2>
+                        <h2>{{ product.title }} <span class="price">Rent: <b>${{ product.price }}</b></span></h2>
                         <div class="car-preview-crousel">
                             <div class="single-car-preview">
-                                <img src="{{product.image.url}}" alt="JSOFT">
+                                <img src="{{ product.image.url }}" alt="JSOFT">
                             </div>
                             {% for rs in images %}
-                            <div class="single-car-preview">
-                                <img src="{{rs.image.url}}" alt="JSOFT">
-                            </div>
+                                <div class="single-car-preview">
+                                    <img src="{{ rs.image.url }}" alt="JSOFT">
+                                </div>
                             {% endfor %}
 
                         </div>
-                    <div class="car-details-info"  >
-                        <span style="font-size: 18px"><b>Adet:</b></span>
-                        <input class="input" type="number" min="0" value="1" max="{{product.amount}}">
-                        <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="rent-btn" ><i class="fa fa-shopping-bag"></i>Kirala</a>
-                    </div>
+                        <div class="car-details-info">
+                            <span style="font-size: 18px"><b>Adet:</b></span>
+                            <input class="input" type="number" min="0" value="1" max="{{ product.amount }}">
+                            <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="rent-btn"><i
+                                    class="fa fa-shopping-bag"></i>Kirala</a>
+                        </div>
                         <div class="car-details-info">
                             <h4>Ek Bilgiler</h4>
                             <p>{{ product.detail |safe }}</p>
@@ -98,39 +99,37 @@
                             </div>
 
                             <div class="review-area">
-                                <h3>Be the first to review “Aston Martin One-77”</h3>
-                                <div class="review-star">
-                                    <p class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star unmark"></i>
-                                        <i class="fa fa-star unmark"></i>
-                                    </p>
-                                </div>
+                                <h3>{{ product.title }} için sen de yorum yap”</h3>
+                                <hr>
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert alert-{{ message.tags }}" role="alert">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
                                 <div class="review-form">
-                                    <form action="index.html">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="name-input">
-                                                    <input type="text" placeholder="Full Name">
-                                                </div>
-                                            </div>
+                                    <form action="/product/addcomment/{{ product.id }}" method="post">
+                                        {% csrf_token %}
 
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="email-input">
-                                                    <input type="email" placeholder="Email Address">
-                                                </div>
-                                            </div>
+                                        <div class="name-input">
+                                            <input type="text" name="subject" id="id_subject"
+                                                   placeholder="Subject">
                                         </div>
 
                                         <div class="message-input">
-                                            <textarea name="review" cols="30" rows="5" placeholder="Write Your Feedback Here!"></textarea>
+                                                <textarea name="comment" cols="30" rows="5" id="id_comment"
+                                                          placeholder="Write Your Feedback Here!"></textarea>
                                         </div>
 
+
                                         <div class="input-submit">
-                                            <button type="submit">Submit</button>
-                                            <button type="reset">Clear</button>
+                                            {% if user.id is not None %}
+                                                <button type="submit">Yorum Ekle</button>
+                                            {% else %}
+                                                Yorum Eklemek için Giriş Yapınız!
+                                            {% endif %}
+
                                         </div>
                                     </form>
                                 </div>
@@ -143,17 +142,6 @@
                 <!-- Sidebar Area Start -->
                 <div class="col-lg-4">
                     <div class="sidebar-content-wrap m-t-50">
-                        <!-- Single Sidebar Start -->
-                        <div class="single-sidebar">
-                            <h3>For More Informations</h3>
-
-                            <div class="sidebar-body">
-                                <p><i class="fa fa-mobile"></i> +8801816 277 243</p>
-                                <p><i class="fa fa-clock-o"></i> Mon - Sat 8.00 - 18.00</p>
-                            </div>
-                        </div>
-                        <!-- Single Sidebar End -->
-
 
 
                         <!-- Single Sidebar Start -->
@@ -168,6 +156,34 @@
                                     <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
 
                                 </div>
+                            </div>
+                        </div>
+                        <!-- Single Sidebar End -->
+
+                        <!-- Single Sidebar Start -->
+                        <div class="single-sidebar">
+                            <h3>Yorumlar</h3>
+
+                            <div class="sidebar-body">
+                                <ul class="recent-tips">
+                                    {% for rs in comments %}
+                                    <li class="single-recent-tips">
+                                        <div class="recent-tip-thum">
+                                            <i class="fa fa-comment"></i></div>
+                                        <div class="recent-tip-body">
+                                            <a href="#"><i class="fa fa-user-o"></i>{{rs.user.first_name}}</a>
+                                            <a href="#"><i class="fa fa-clock-o"></i>{{rs.create_at}}</a>
+                                            <div>
+
+                                                <b style="font-size: 13px">{{rs.subject}}</b>
+
+                                                <p>{{ rs.comment }}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+
+                                </ul>
                             </div>
                         </div>
                         <!-- Single Sidebar End -->

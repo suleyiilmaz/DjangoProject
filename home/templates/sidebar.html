@@ -4,18 +4,14 @@
         <div class="row">
             <div class="col-lg-8 col-md-12 m-auto">
                 <div class="car-details-content">
-                    {% for rs in sliderdata %}
+
 
                         <div class="car-preview-crousel">
+                        {% for rs in sliderdata %}
                             <div class="single-car-preview">
                                 <img src="{{ rs.image.url }}" alt="JSOFT">
                             </div>
-                            <div class="single-car-preview">
-                                <img src="{% static 'assets/img/car/car-1.jpg' %}" alt="JSOFT">
-                            </div>
-                            <div class="single-car-preview">
-                                <img src="{% static 'assets/img/car/car-6.jpg' %}" alt="JSOFT">
-                            </div>
+                             {% endfor %}
 
                         </div>
                         <div class="car-list-info without-bar">
@@ -36,7 +32,7 @@
                             </p>
                             <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="rent-btn">Hemen Kirala</a>
                         </div>
-                    {% endfor %}
+
 
                 </div>
             </div>
