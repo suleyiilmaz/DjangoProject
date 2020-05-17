@@ -1,4 +1,7 @@
 {% load static %}
+
+<!-- jQuery !-->
+
 <!--== Preloader Area Start ==-->
 <div class="preloader">
     <div class="preloader-spinner">
@@ -60,6 +63,9 @@
                 </div>
                 <!--== Logo End ==-->
 
+                <!--==Search Start ==-->
+
+
                 <!--== Main Menu Start ==-->
                 <div class="col-lg-8 d-none d-xl-block">
                     <nav class="mainmenu alignright">
@@ -73,10 +79,12 @@
                                     {% load mptt_tags %}
 
                                     {% recursetree category %}
-                                        <li ><a href="/category/{{ node.id }}/{{ node.slug }}"><b>{{ node.title }}</b></a>
+                                        <li>
+                                            <a href="/category/{{ node.id }}/{{ node.slug }}"><b>{{ node.title }}</b></a>
 
                                             {% if not node.is_leaf_node %}
-                                                    <li><a href="#"><i>{{ node.title }}</i><i class="fa fa-caret-down"></i>{{ children }}</a></li>
+                                                <li><a href="#"><i>{{ node.title }}</i><i
+                                                        class="fa fa-caret-down"></i>{{ children }}</a></li>
 
                                             {% endif %}
 
@@ -84,11 +92,9 @@
                                     {% endrecursetree %}
 
 
-
-
                                 </ul>
                             </li>
-                           <li><a href="/aboutus">Hakkımızda</a></li>
+                            <li><a href="/aboutus">Hakkımızda</a></li>
 
                             <li><a href="/products">Cars</a>
                             </li>

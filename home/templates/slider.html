@@ -1,54 +1,81 @@
 {% load static %}
 <!--== SlideshowBg Area Start ==-->
-    <section id="slideslow-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="slideshowcontent">
-                        <div class="display-table">
-                            <div class="display-table-cell">
-                                <h1>BOOK A CAR TODAY!</h1>
-                                <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
+<section id="slideslow-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="slideshowcontent">
+                    <div class="display-table">
+                        <div class="display-table-cell">
+                            <h1>BOOK A CAR TODAY!</h1>
+                            <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
 
-                                <div class="book-ur-car">
-                                    <form action="index2.html">
-                                        <div class="pick-location bookinput-item">
-                                            <select class="custom-select">
-                                              <option selected>Pick Location</option>
-                                              <option value="1">Dhaka</option>
-                                              <option value="2">Comilla</option>
-                                              <option value="3">Barishal</option>
-                                              <option value="3">Rangpur</option>
-                                            </select>
-                                        </div>
+                            <script>
+                                $(function () {
+                                    $("#query").autocomplete({
+                                        source: "/search_auto/",
+                                        select: function (event, ui) { //item selected
+                                            AutoCompleteSelectHandler(event, ui)
+                                        },
+                                        minLength: 2,
+                                    });
+                                });
 
-                                        <div class="pick-date bookinput-item">
-                                            <input id="startDate2" placeholder="Pick Date" />
-                                        </div>
+                                function AutoCompleteSelectHandler(event, ui) {
+                                    var selectedObj = ui.item;
+                                }
 
-                                        <div class="retern-date bookinput-item">
-                                            <input id="endDate2" placeholder="Return Date" />
-                                        </div>
+                            </script>
 
-                                        <div class="car-choose bookinput-item">
-                                            <select class="custom-select">
-                                              <option selected>Choose Car</option>
-                                              <option value="1">BMW</option>
-                                              <option value="2">Audi</option>
-                                              <option value="3">Lexus</option>
-                                            </select>
-                                        </div>
+                            <div class="book-ur-car">
+                                <form action="/search/" method="post">
+                                    {% csrf_token %}
 
-                                        <div class="bookcar-btn bookinput-item">
-                                            <button type="submit">Book Car</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                    <div class=" bookinput-item" style="height: 43px">
+                                        <input id="query" name="query" type="text" placeholder="Ne arıyorsunuz?"/>
+                                    </div>
+
+
+                                    <div class="pick-date bookinput-item">
+                                        <input id="startDate2" placeholder="Pick Date"/>
+                                    </div>
+
+                                    <div class="retern-date bookinput-item">
+                                        <input id="endDate2" placeholder="Return Date"/>
+                                    </div>
+
+                                    <div class="car-choose bookinput-item">
+                                        {% load mptt_tags %}
+                                        <select name="catid" class="custom-select">
+                                            <option value="0" selected>Tüm Kategoriler</option>
+                                            {% recursetree category %}
+                                                {% if node.is_leaf_node %}
+                                                    <option value="{{ node.id }}">{{ node.title }}</option>
+                                                {% endif %}
+                                                {% if not node.is_leaf_node %}
+                                                    <optgroup label="{{ node.title }}">
+                                                    {{ children }}
+                                                    </optgroup>
+
+                                                {% endif %}
+                                        {% endrecursetree %}
+
+                                            <option value="1">BMW</option>
+                                            <option value="2">Audi</option>
+                                            <option value="3">Lexus</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="bookcar-btn bookinput-item">
+                                        <button type="submit">Book Car</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!--== SlideshowBg Area End ==-->
+    </div>
+</section>
+<!--== SlideshowBg Area End ==-->

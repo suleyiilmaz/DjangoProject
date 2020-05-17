@@ -1,6 +1,8 @@
 from unicodedata import category
 
+from ckeditor_uploader.forms import SearchForm
 from django.contrib import messages
+from django.core.serializers import json
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
@@ -84,3 +86,39 @@ def product_detail(request, id, slug):
         'comments':comments,
     }
     return render(request, 'product_detail.html', context)
+
+
+def product_search(request):
+    if request.method=='POST':
+        form= SearchForm(request.POST)
+        if form.is_valid():
+            category= Category.objects.all()
+            query=form.cleaned_data['query']  #get data from form
+            catid=form.cleaned_data['catid']
+            if catid==0:
+                products = Product.objects.filter(title__icontains=query)  # select * from where title like query
+            else:
+                products = Product.objects.filter(title__icontains=query, category_id=catid)  # select * from where title like query
+
+            context = {
+                'products': products,
+                'category': category,
+            }
+            return render(request, 'product_search.html', context)
+
+    return HttpResponseRedirect('/')
+
+def product_search_auto(request):
+  if request.is_ajax():
+    q = request.GET.get('term', '')
+    product = Product.objects.filter(title__icontains=q)
+    results = []
+    for rs in product:
+      product_json = {}
+      product_json = rs.title
+      results.append(product_json)
+    data = json.dumps(results)
+  else:
+    data = 'fail'
+  mimetype = 'application/json'
+  return HttpResponse(data, mimetype)

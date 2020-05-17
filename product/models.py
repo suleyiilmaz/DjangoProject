@@ -44,6 +44,11 @@ class Product(models.Model):
         ('True', 'Evet'),
         ('False', 'Hayır'),
     )
+    LOCATION= (
+        ('İstanbul', 'İstanbul'),
+        ('Ankara', 'Ankara'),
+    )
+
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     description = models.CharField(max_length=255)
@@ -51,9 +56,11 @@ class Product(models.Model):
     image = models.ImageField(blank=True,upload_to='images/')
     price = models.FloatField()
     amount= models.IntegerField()
+    start_date = models.DateField(blank=True)
+    end_date = models.DateField(blank=True)
+    location = models.CharField(blank=True,max_length=20, choices=LOCATION, default='İstanbul')
     slug = models.SlugField()
     detail= RichTextUploadingField()
-
     status = models.CharField(max_length=10,choices=STATUS)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
