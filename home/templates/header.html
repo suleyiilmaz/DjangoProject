@@ -70,6 +70,24 @@
                 <div class="col-lg-8 d-none d-xl-block">
                     <nav class="mainmenu alignright">
                         <ul>
+                            <li>
+                                {% if user.id is not None %}
+                                <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                                    <strong><i class="fa fa-user">{{user.first_name}}</i></strong>
+                                </div>
+                                {% else %}
+                                    <a href="/login/"><i class="fa fa-user-o"></i>Login</a>
+                                {% endif %}
+                               {% if user.id is not None %}
+                                <ul>
+                                    <li><a href="#">Hesabım</a></li>
+                                    <li><a href="#">Favorilerim</a></li>
+                                    <li><a href="#">Siparişlerim</a></li>
+                                    <li><a href="#">Yorumlarım</a></li>
+                                    <li><a href="/logout/">Logout</a></li>
+                                </ul>
+                            {% endif %}
+                            </li>
                             <li class="active"><a href="/">Anasayfa</a>
 
                             </li>
@@ -96,10 +114,11 @@
                             </li>
                             <li><a href="/aboutus">Hakkımızda</a></li>
 
-                            <li><a href="/products">Cars</a>
-                            </li>
+
                             <li><a href="/references">Referanslar</a></li>
                             <li><a href="/contact">İletişim</a></li>
+
+
                         </ul>
                     </nav>
                 </div>
