@@ -101,8 +101,9 @@ class FAQ(models.Model):
         ('True', 'Evet'),
         ('False', 'Hayır'),
     )
+    ordernumber = models.IntegerField()
     question = models.CharField(max_length=150)
-    answer = models.TextField(max_length=255)
+    answer = models.TextField()
     status = models.CharField(max_length=10, choices=STATUS)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)

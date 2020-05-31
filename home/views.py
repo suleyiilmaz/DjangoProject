@@ -1,3 +1,4 @@
+from tkinter import Menu
 from unicodedata import category
 
 from ckeditor_uploader.forms import SearchForm
@@ -9,7 +10,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from home.forms import SignUpForm
-from home.models import Setting, ContactForm, ContactFormMessage, UserProfile
+from home.models import Setting, ContactForm, ContactFormMessage, UserProfile, FAQ
 from product.models import Product, Category, Images, Comment
 
 
@@ -128,8 +129,6 @@ def product_search_auto(request):
     return HttpResponse(data, mimetype)
 
 
-
-
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
@@ -161,18 +160,28 @@ def signup_view(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
-            login(request,user)
-            current_user=request.user
-            data=UserProfile()
-            data.user_id=current_user.id
-            data.image="images/users/user.png"
+            login(request, user)
+            current_user = request.user
+            data = UserProfile()
+            data.user_id = current_user.id
+            data.image = "images/users/user.png"
             data.save()
-            messages.success(request,"Hoş Geldiniz.. Kayıt işleminiz başarılı ile gerçekleşti")
+            messages.success(request, "Hoş Geldiniz.. Kayıt işleminiz başarılı ile gerçekleşti")
             return HttpResponseRedirect('/')
 
-    form=SignUpForm()
+    form = SignUpForm()
     category = Category.objects.all()
     context = {'category': category,
                'form': form,
                }
     return render(request, 'signup.html', context)
+
+
+def faq(request):
+    category = Category.objects.all()
+    faq = FAQ.objects.all().order_by('ordernumber')
+    context = {'category': category,
+               'faq': faq,
+
+               }
+    return render(request, 'faq.html', context)
