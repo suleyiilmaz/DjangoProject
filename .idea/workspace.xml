@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f1f42a0-a641-47d1-8fb5-8d015c7d0800" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rent/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rent/migrations/0002_auto_20200606_0542.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="8f1f42a0-a641-47d1-8fb5-8d015c7d0800" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,13 +33,6 @@
         <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="product_product: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -92,7 +72,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -151,8 +131,8 @@
       <workItem from="1590149501861" duration="5067000" />
       <workItem from="1590362933974" duration="1461000" />
       <workItem from="1590889979718" duration="2023000" />
-      <workItem from="1590944039790" duration="7574000" />
-      <workItem from="1591395644244" duration="17495000" />
+      <workItem from="1590944039790" duration="6258000" />
+      <workItem from="1591716234195" duration="864000" />
     </task>
     <servers />
   </component>
@@ -183,9 +163,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1588960495821" />
-    <state x="733" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1591395650025">
+    <state x="733" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1591716236422">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="733" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591395650025" />
+    <state x="733" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591716236422" />
   </component>
 </project>
