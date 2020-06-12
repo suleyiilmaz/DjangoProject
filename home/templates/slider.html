@@ -1,4 +1,7 @@
 {% load static %}
+
+
+
 <!--== SlideshowBg Area Start ==-->
 <section id="slideslow-bg">
     <div class="container">
@@ -10,24 +13,9 @@
                             <h1>BOOK A CAR TODAY!</h1>
                             <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
 
-                            <script>
-                                $(function () {
-                                    $("#query").autocomplete({
-                                        source: "/search_auto/",
-                                        select: function (event, ui) { //item selected
-                                            AutoCompleteSelectHandler(event, ui)
-                                        },
-                                        minLength: 2,
-                                    });
-                                });
-
-                                function AutoCompleteSelectHandler(event, ui) {
-                                    var selectedObj = ui.item;
-                                }
-
-                            </script>
 
                             <div class="book-ur-car">
+
                                 <form action="/search/" method="post">
                                     {% csrf_token %}
 
@@ -60,9 +48,6 @@
                                                 {% endif %}
                                         {% endrecursetree %}
 
-                                            <option value="1">BMW</option>
-                                            <option value="2">Audi</option>
-                                            <option value="3">Lexus</option>
                                         </select>
                                     </div>
 
@@ -70,6 +55,24 @@
                                         <button type="submit">Book Car</button>
                                     </div>
                                 </form>
+                            <script>
+
+                                  $(function() {
+                                    $("#query").autocomplete({
+                                      source: "/search_auto/",
+                                      select: function (event, ui) { //item selected
+                                        AutoCompleteSelectHandler(event, ui)
+                                      },
+                                      minLength: 2,
+                                    });
+                                  });
+
+                                  function AutoCompleteSelectHandler(event, ui)
+                                  {
+                                    var selectedObj = ui.item;
+                                  }
+
+                                </script>
                             </div>
                         </div>
                     </div>

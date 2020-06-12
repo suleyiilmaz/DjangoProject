@@ -8,6 +8,7 @@ class SearchForm(forms.Form):
     catid = forms.IntegerField()
 
 
+
 class SignUpForm(UserCreationForm):
     username=forms.CharField(max_length=30,label='Username:')
     email=forms.EmailField(max_length=200,label='Email :')

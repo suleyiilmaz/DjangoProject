@@ -1,15 +1,16 @@
 from tkinter import Menu
-from unicodedata import category
+#from unicodedata import category
 
-from ckeditor_uploader.forms import SearchForm
+
 from django.contrib import messages
 from django.contrib.auth import logout, login, authenticate
-from django.core.serializers import json
+import json
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
+
 # Create your views here.
-from home.forms import SignUpForm
+from home.forms import SignUpForm, SearchForm
 from home.models import Setting, ContactForm, ContactFormMessage, UserProfile, FAQ
 from product.models import Product, Category, Images, Comment
 
@@ -35,6 +36,7 @@ def index(request):
 
 def aboutus(request):
     setting = Setting.objects.get(pk=1)
+    category = Category.objects.all()
 
     context = {'setting': setting, 'page': 'aboutus', 'category': category}
     return render(request, 'aboutus.html', context)
@@ -42,11 +44,13 @@ def aboutus(request):
 
 def references(request):
     setting = Setting.objects.get(pk=1)
+    category = Category.objects.all()
     context = {'setting': setting, 'category': category}
     return render(request, 'references.html', context)
 
 
 def contact(request):
+    category = Category.objects.all()
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -88,6 +92,7 @@ def product_detail(request, id, slug):
         'images': images,
         'comments': comments,
     }
+
     return render(request, 'product_detail.html', context)
 
 
@@ -109,11 +114,11 @@ def product_search(request):
                 'category': category,
             }
             return render(request, 'product_search.html', context)
-
     return HttpResponseRedirect('/')
 
 
 def product_search_auto(request):
+    messages.success(request, "deneme")
     if request.is_ajax():
         q = request.GET.get('term', '')
         product = Product.objects.filter(title__icontains=q)
@@ -126,6 +131,7 @@ def product_search_auto(request):
     else:
         data = 'fail'
     mimetype = 'application/json'
+
     return HttpResponse(data, mimetype)
 
 

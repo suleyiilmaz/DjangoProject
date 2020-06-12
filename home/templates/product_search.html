@@ -30,17 +30,19 @@
     <section id="about-area" class="section-padding">
         <div class="container">
 
-            <div class="row">
-                <table cellpadding="3" width="1200">
+            <div class="row"  >
+
+                <table cellpadding="3" width="800" style="margin-left: auto;margin-right:auto">
                     <tr>
                         <th>Fotoğraf</th>
                         <th>Ürün İsmi</th>
                         <th>Kategori</th>
                         <th>Fiyat</th>
                     </tr>
+
                     {% for rs in products %}
                         <tr>
-                        <td><a href="/product/{{ rs.id }}/{{ rs.slug }}"><img src="{{ rs.image.url }}" alt=""></a></td>
+                        <td><br><a href="/product/{{ rs.id }}/{{ rs.slug }}"><img style="width: 230px;height:130px;border-radius: 10px "  src="{{ rs.image.url }}" alt=""></a></td>
                         <td><h5><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></h5></td>
                         <td><a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}">{{ rs.category }}</a></td>
                         <td><h5>${{ rs.price }}</h5></td>
@@ -49,6 +51,7 @@
                     
                     
                 </table>
+
 
             </div>
             

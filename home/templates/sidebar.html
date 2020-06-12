@@ -9,29 +9,14 @@
                         <div class="car-preview-crousel">
                         {% for rs in sliderdata %}
                             <div class="single-car-preview">
-                                <img src="{{ rs.image.url }}" alt="JSOFT">
+                                <img style="width: 100%;height: 400px" src="{{ rs.image.url }}" alt="JSOFT">
+                            <h2 class="text-center" ><a  href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></h2>
+
                             </div>
-                             {% endfor %}
+                         {% endfor %}
 
                         </div>
-                        <div class="car-list-info without-bar">
-                            <h2><a href="#">{{ rs.title }}</a></h2>
-                            <h5>{{ rs.price }}$ / günlük</h5>
-                            <p>{{ rs.description }}</p>
-                            <ul class="car-info-list">
-                                <li>AC</li>
-                                <li>Diesel</li>
-                                <li>Auto</li>
-                            </ul>
-                            <p class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star unmark"></i>
-                            </p>
-                            <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="rent-btn">Hemen Kirala</a>
-                        </div>
+
 
 
                 </div>
