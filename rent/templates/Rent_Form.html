@@ -28,6 +28,14 @@
 {% block content %}
     <div class="contact-page-wrao section-padding">
         <div class="container">
+            {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                {{ message}}
+                            </div>
+
+                        {% endfor %}
+                    {% endif %}
 
 
             <form action="" method="post">
@@ -61,19 +69,8 @@
                                 <option value="Karabük">Karabük</option>
                             </select>
                         </p>
-                        <p><label for="id_firt_name">Country:</label>
-                            <input type="text" name="country" class="input" id="id_country"
-                                   value="{{ profile.country }}" maxlength=" "></p>
-                        <p ><label for="id_start_date">Başlangıç Günü:</label>
-                            <input type="date" name="start_date" placeholder="Pick Date"
-                            >
-                        </p>
 
-                        <p >Bitiş Günü:</label>
-                            <input type="date" name="end_date" value="" placeholder="Pick Date"
-                            >
-                        </p>
-                        <br>
+
                         <button type="submit" class="btn-primary">Kirala</button>
                     </div>
                     <div class="col-lg-6 ">

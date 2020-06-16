@@ -47,10 +47,16 @@
 
                         </div>
                         <div class="car-details-info">
-                            <span style="font-size: 18px"><b>Adet:</b></span>
-                            <input class="input" type="number" min="0" value="1" max="{{ product.amount }}">
-                            <a href="/rent/rentproduct/{{ product.id }}" class="rent-btn"><i
-                                    class="fa fa-shopping-bag"></i>Kirala</a>
+
+                            <form action="/rent/rentproduct/{{ product.id }}/" method="post">
+                                 {% csrf_token %}
+                            <p>Başlangıç Günü:
+                            <input name="start_date" class="input" type="date" min="{{ product.start_date|date:"Y-m-d" }}"  max="{{ product.end_date|date:"Y-m-d" }}"></p>
+                            <p>Bitiş Günü:
+                            <input name="end_date" class="input" type="date" min="{{ product.start_date|date:"Y-m-d" }}"  max="{{ product.end_date|date:"Y-m-d" }}"></p>
+                            <button type="submit" class="rent-btn"><i
+                                    class="fa fa-shopping-bag"></i>Kirala</button>
+                                </form>
                         </div>
                         <div class="car-details-info">
                             <h4>Ek Bilgiler</h4>
